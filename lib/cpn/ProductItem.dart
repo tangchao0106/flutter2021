@@ -17,7 +17,6 @@ class ProductItem extends StatelessWidget {
         Text(title, style: TextStyle(fontSize: 10),),
         SizedBox(height: 10,),
         Image.network(imageurl)
-
       ],
     );
   }
