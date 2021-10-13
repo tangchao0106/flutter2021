@@ -328,6 +328,11 @@ class _VideoDescription extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Wrap(
+            children: [
+
+            ],
+          ),
           Text(
             title,
             style: TextStyle(fontSize: 30),

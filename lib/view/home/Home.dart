@@ -48,15 +48,14 @@ class _HomeBodyState extends State<HomeBody> {
                 Container(
                     width: double.infinity,
                     child: Text(
-                      "datadatadatadatdatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadataa",
+                      "adatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadataa",
                       textAlign: TextAlign.center,
                       style:
                           TextStyle(fontWeight: FontWeight.w800, fontSize: 30),
                     )),
                 Text("datadatadatadata"),
                 Text("datadatadatadata"),
-                Text("datadatadatadata"),
-                Text("datadatadatadata"),
+
                 SizedBox(
                   height: 10,
                 ),
