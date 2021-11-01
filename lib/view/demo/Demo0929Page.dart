@@ -41,7 +41,6 @@ class Demo2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.all(8),
-      itemExtent: 106,
       children: [
         CustomListItem(
             thumbnail: Container(
@@ -295,6 +294,7 @@ class CustomListItem extends StatelessWidget {
             flex: 3,
           ),
           Column(
+
             children: [
               GestureDetector(
                   child: const Icon(Icons.more_vert),
@@ -328,11 +328,7 @@ class _VideoDescription extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Wrap(
-            children: [
 
-            ],
-          ),
           Text(
             title,
             style: TextStyle(fontSize: 30),

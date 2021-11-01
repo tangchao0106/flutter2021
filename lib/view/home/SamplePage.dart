@@ -3,9 +3,16 @@ import 'package:untitled/view/demo/Demo0929Page.dart';
 import 'package:untitled/view/demo/Demo0930Page.dart';
 import 'package:untitled/view/demo/Demo1009.dart';
 import 'package:untitled/view/demo/Demo1010.dart';
+import 'package:untitled/view/demo/Demo1013.dart';
+import 'package:untitled/view/demo/Demo1015.dart';
+import 'package:untitled/view/demo/Demo1018.dart';
+import 'package:untitled/view/demo/Demo1020.dart';
+import 'package:untitled/view/demo/Demo1022.dart';
+import 'package:untitled/view/demo/Demo1025.dart';
+import 'package:untitled/view/demo/Demo1029.dart';
+import 'package:untitled/view/demo/Demo1031.dart';
 import 'package:untitled/view/demo/Demo3Page.dart';
 import 'package:untitled/view/demo/Demo4Page.dart';
-import 'SecondePage.dart';
 
 class SamplePage extends StatelessWidget {
   const SamplePage({Key? key}) : super(key: key);
@@ -45,17 +52,13 @@ class _SamplePagehome extends StatelessWidget {
                 subtitle: Text(todos[index].description),
                 onLongPress: () => {print("onLongPressonLongPress")},
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Demo2(todos[index]))),
+                    builder: (context) => Demo2())),
               )),
     );
   }
 }
 
 class Demo2 extends StatelessWidget {
-  final _Todo todo;
-
-  Demo2(@required this.todo);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -68,12 +71,9 @@ class Demo2 extends StatelessWidget {
         ),
         body: Padding(
           padding: const EdgeInsets.all(18.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
             children: [
-              Text(
-                "${todo.title}",
-              ),
+
               ElevatedButton(
                   onPressed: () async {
                     String result =
@@ -121,10 +121,79 @@ class Demo2 extends StatelessWidget {
                             MaterialPageRoute(builder: (context) => Demo1009()))
                       },
                   child: Text("1009")),
-              MaterialButton(onPressed: ()=>{
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Demo1010()))
-
-              },child: Text("1010container约束"),)
+              MaterialButton(
+                onPressed: () => {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => Demo1010()))
+                },
+                child: Text("1010container约束"),
+                color: Colors.red[100],
+              ),
+              // <image src="https://img-shop.qmimg.cn/s23107/2020/04/27/0039bf41c9ebd50a2c.jpg"></image>
+              MaterialButton(
+                onPressed: () => {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Demo1013(
+                            title: "Demo1013",
+                          )))
+                },
+                child: Image.network(
+                  "https://img-shop.qmimg.cn/s23107/2020/04/27/0039bf41c9ebd50a2c.jpg",
+                  fit: BoxFit.fill,
+                  width: 50,
+                  height: 50,
+                ),
+                color: Colors.yellowAccent,
+              ),
+              OutlinedButton(
+                  onPressed: () => {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Demo1015(
+                                  title: "1015",
+                                )))
+                      },
+                  child: Text("Demo1015")),
+              ElevatedButton(
+                  onPressed: () => {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Demo1018(
+                                  title: "1018",
+                                )))
+                      },
+                  child: Text("DEMO1018")),
+              ElevatedButton(
+                  onPressed: () => {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Demo1020(title: "1020动画")))
+                      },
+                  child: Text("Demo1020")),
+              ElevatedButton(
+                  onPressed: () => {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => TestView1022())),
+                      },
+                  child: Text("1022布局")),
+              ElevatedButton(
+                  onPressed: () => {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => Demo1025()))
+                      },
+                  child: Text("1025布局")),
+              TextButton(
+                  onPressed: () => {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => Demo1029()))
+                      },
+                  child: Text("1029STACK")),
+              TextButton.icon(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Demo1031(
+                              title: "1031",
+                            )));
+                  },
+                  icon: Icon(Icons.accessibility_sharp),
+                  label: Text("1031"))
               // Scaffold.of(context)
               // ..removeCurrentSnackBar()
               // ..showSnackBar(SnackBar(content: Text("$result")));

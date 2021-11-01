@@ -11,6 +11,7 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: "豆瓣APP",
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primaryColor: Colors.red, highlightColor: Colors.transparent),
         home: MyPageState());
