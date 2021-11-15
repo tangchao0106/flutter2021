@@ -11,8 +11,11 @@ import 'package:untitled/view/demo/Demo1022.dart';
 import 'package:untitled/view/demo/Demo1025.dart';
 import 'package:untitled/view/demo/Demo1029.dart';
 import 'package:untitled/view/demo/Demo1031.dart';
+import 'package:untitled/view/demo/Demo1102Sliver.dart';
 import 'package:untitled/view/demo/Demo3Page.dart';
 import 'package:untitled/view/demo/Demo4Page.dart';
+import 'package:untitled/view/demo/Demo1101about.dart';
+import 'package:untitled/view/demo/loginPage.dart';
 
 class SamplePage extends StatelessWidget {
   const SamplePage({Key? key}) : super(key: key);
@@ -51,8 +54,8 @@ class _SamplePagehome extends StatelessWidget {
                 title: Text(todos[index].title),
                 subtitle: Text(todos[index].description),
                 onLongPress: () => {print("onLongPressonLongPress")},
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Demo2())),
+                onTap: () => Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Demo2())),
               )),
     );
   }
@@ -73,7 +76,6 @@ class Demo2 extends StatelessWidget {
           padding: const EdgeInsets.all(18.0),
           child: ListView(
             children: [
-
               ElevatedButton(
                   onPressed: () async {
                     String result =
@@ -193,7 +195,57 @@ class Demo2 extends StatelessWidget {
                             )));
                   },
                   icon: Icon(Icons.accessibility_sharp),
-                  label: Text("1031"))
+                  label: Text("1031")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => AboutPage()));
+                  },
+                  child: Text("wanandroid")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Slivers()));
+                  },
+                  child: Text("Sliver")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
+                  },
+                  child: Text("1103")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/p123");
+                  },
+                  child: Text("UnknowPage")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/provider");
+                  },
+                  child: Text("动态路由")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/custommultichildlayout");
+                  },
+                  child: Text("1109Custommultichild")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/Demo1112");
+                  },
+                  child: Text("1112")),
+              ElevatedButton(onPressed: (){
+                Navigator.pushNamed(context, "/CountGetPage");
+              }, child: Text("getx1115")),
+
+              ElevatedButton(onPressed: (){
+                Navigator.pushNamed(context, "/PlatformChannel");
+
+              }, child: Text("PlatformChannel1118")),
+              ElevatedButton(onPressed: (){
+                Navigator.pushNamed(context, "/1123");
+              }, child: Text("1123"))
+
               // Scaffold.of(context)
               // ..removeCurrentSnackBar()
               // ..showSnackBar(SnackBar(content: Text("$result")));

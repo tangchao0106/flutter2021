@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Demo1031 extends StatelessWidget {
   Demo1031({Key? key, required this.title}) : super(key: key);
@@ -76,12 +77,14 @@ class _Body1 extends StatelessWidget {
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(SnackBar(
-                                content: Text("外卖"),
-                                duration: Duration(seconds: 1),
-                                backgroundColor: Colors.blue[100],
-                              ));
+                              showToast();
+
+                              // ScaffoldMessenger.of(context)
+                              //     .showSnackBar(SnackBar(
+                              //   content: Text("外卖"),
+                              //   duration: Duration(seconds: 1),
+                              //   backgroundColor: Colors.blue[100],
+                              // ));
                             },
                             child: Container(
                               // height: double.infinity,
@@ -125,6 +128,9 @@ class _Body1 extends StatelessWidget {
                                   duration: Duration(seconds: 1),
                                 ),
                               );
+                            },
+                            onTap: () {
+                              showToast();
                             },
                             child: Container(
                               // height: double.infinity,
@@ -221,5 +227,16 @@ class _Body1 extends StatelessWidget {
         ),
       ],
     ));
+  }
+
+  void showToast() {
+    Fluttertoast.showToast(
+        msg: "This is Center Short Toast",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0);
   }
 }
