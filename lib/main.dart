@@ -1,20 +1,69 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
+import 'package:provider/provider.dart';
+import 'package:untitled/view/demo/CustomMulti.dart';
+import 'package:untitled/view/demo/DrawerList.dart';
+import 'package:untitled/view/demo/Provider1106.dart';
+import 'package:untitled/view/demo/SearchPage.dart';
+import 'package:untitled/view/demo/UnknowPage.dart';
+import 'package:untitled/view/demo/loginPage.dart';
+import 'package:untitled/view/demo/loginviewmodel.dart';
+import 'package:untitled/view/demo/registviewmodel.dart';
+import 'package:untitled/view/demo/routes.dart';
+import 'package:untitled/view/demo/viewModel1114.dart';
 import 'package:untitled/view/home/Home.dart';
 import 'package:untitled/view/home/Mine.dart';
 import '';
 
-void main() => runApp(Myapp());
+void main() => runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => LoginViewModel()),
+        ChangeNotifierProvider(create: (context) => RegistViewModel()),
+      ],
+      child: Myapp(),
+    ));
+final GlobalKey<NavigatorState> navigatorkey = new GlobalKey();
+var logger = Logger();
 
 class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    logger.d("navigatorkey ${navigatorkey.currentContext}");
+
+    context.read<LoginViewModel>().getIslogin;
+    context.watch<LoginViewModel>().getIslogin;
+
     return MaterialApp(
-        title: "豆瓣APP",
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            primaryColor: Colors.red, highlightColor: Colors.transparent),
-        home: MyPageState());
+      title: "豆瓣APP",
+      debugShowCheckedModeBanner: false,
+      routes: routes,
+      // initialRoute: "login",
+      onUnknownRoute: (RouteSettings setting) =>
+          MaterialPageRoute(builder: (context) => UnknowPage()),
+      onGenerateRoute: (RouteSettings setting) {
+        if (setting.name == "/") {
+          return MaterialPageRoute(builder: (context) => LoginPage());
+        }
+        if (setting.name == "/provider") {
+          // return MaterialPageRoute(builder: (context) => Provider());
+        }
+        // setting.name.
+        var uri = Uri.parse(setting.name!);
+        if (uri.pathSegments.length == 2 &&
+            uri.pathSegments.first == "provider") {
+          var id = uri.pathSegments[1];
+          // return MaterialPageRoute(
+          //     builder: (context) => Provider(
+          //           id: id,
+          //         ));
+        }
+      },
+      theme: ThemeData(
+          primaryColor: Colors.red, highlightColor: Colors.transparent),
+      home: MyPageState(),
+      navigatorKey: navigatorkey,
+    );
   }
 }
 
@@ -38,15 +87,22 @@ class _MyPageState extends State<MyPageState> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentindx,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "首页"),
-          BottomNavigationBarItem(icon: Icon(Icons.category), label: "分类")
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "首页",
+              backgroundColor: Colors.amber[100]),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.category),
+              label: "分类",
+              backgroundColor: Colors.deepPurple[100])
         ],
+        type: BottomNavigationBarType.shifting,
         onTap: (int currentIndex) {
           _changePage(currentIndex);
         },
       ),
       body: pages[_currentindx],
-      drawer: Drawer(),
+      drawer: DrawerList(),
       floatingActionButton: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return FloatingActionButton(
