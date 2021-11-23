@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:get/get.dart';
 import 'package:untitled/network/http_config.dart';
 import 'package:untitled/network/http_request.dart';
 import 'package:untitled/view/demo/SearchPage.dart';
@@ -326,7 +325,6 @@ class _LoginPageState extends State<LoginPage>
     //
     // Logger(printer: SimplePrinter(colors: true)).v('boom');
     showMyCupertinoDialog(context);
-
   }
 
   void showToast(String s) {

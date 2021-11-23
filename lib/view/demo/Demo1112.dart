@@ -29,11 +29,6 @@ class Demo1112 extends StatelessWidget {
               ),
               errorWidget: (context, url, error) => Icon(Icons.error),
             ),
-            // FadeInImage.assetNetwork(
-            //     placeholder:
-            //         "https://img-shop.qmimg.cn/s23107/2020/04/26/3eb7808bf105262604.jpg",
-            //     image:
-            //         "https://img-shop.qmimg.cn/s23107/2020/04/26/3eb7808bf105262604.jpg"),
             ElevatedButton(
                 onPressed: () {
                   context.watch<Demo1114>().login();
