@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 import 'SamplePage.dart';
 
 class Home extends StatelessWidget {
@@ -8,16 +9,20 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("首页20210919"),
-        // leading: new BackButton(),
-        leading: new CloseButton(),
         centerTitle: true,
         // actionsIconTheme: IconThemeData(color: Colors.red,opacity: 0.9),//设置导航右边图标的主题色，此时iconTheme对于右边图标颜色会失效
         iconTheme: IconThemeData(color: Colors.black,opacity: 0.6),//设置AppBar上面Icon的主题颜色
         backgroundColor: Colors.amber,//设置背景颜色
 
         actions: [
-          IconButton(icon:Icon(Icons.more_time),onPressed: (){},),
-          IconButton(icon:Icon(Icons.mobile_screen_share),onPressed: (){},),
+          IconButton(icon:Icon(Icons.more_time),onPressed: (){
+
+
+          },),
+          IconButton(icon:Icon(Icons.mobile_screen_share),onPressed: (){
+            Share.share("首页20210919");
+
+          },),
         ],
       ),
 
@@ -63,9 +68,6 @@ class _HomeBodyState extends State<HomeBody> {
                       style:
                           TextStyle(fontWeight: FontWeight.w800, fontSize: 30),
                     )),
-                Text("datadatadatadata"),
-                Text("datadatadatadata"),
-
                 SizedBox(
                   height: 10,
                 ),

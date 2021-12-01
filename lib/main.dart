@@ -38,7 +38,6 @@ class Myapp extends StatelessWidget {
       title: "豆瓣APP",
       debugShowCheckedModeBanner: false,
       routes: routes,
-      // initialRoute: "login",
       onUnknownRoute: (RouteSettings setting) =>
           MaterialPageRoute(builder: (context) => UnknowPage()),
       onGenerateRoute: (RouteSettings setting) {
@@ -90,11 +89,11 @@ class _MyPageState extends State<MyPageState> {
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: "首页",
-              backgroundColor: Colors.amber[100]),
+              backgroundColor: Colors.amber),
           BottomNavigationBarItem(
               icon: Icon(Icons.category),
               label: "分类",
-              backgroundColor: Colors.deepPurple[100])
+              backgroundColor: Colors.deepPurple)
         ],
         type: BottomNavigationBarType.shifting,
         onTap: (int currentIndex) {

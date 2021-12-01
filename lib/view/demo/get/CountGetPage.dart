@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled/view/demo/Messages.dart';
 import 'package:untitled/view/demo/get/CounterGetLogic.dart';
+import 'package:untitled/view/demo/get/getx/view.dart';
+import 'package:untitled/view/demo/get/route_pages.dart';
+import 'package:untitled/view/demo/get11128/TestOnePage.dart';
+import 'package:untitled/view/demo/get11128/get1128demo.dart';
+
+import 'getx/getview.dart';
 
 class CountGetPage extends StatelessWidget {
   const CountGetPage({Key? key}) : super(key: key);
@@ -14,7 +20,8 @@ class CountGetPage extends StatelessWidget {
       translations: Messages(),
       locale: Locale('zh', 'CN'),
       fallbackLocale: Locale('en', 'US'),
-      getPages: [GetPage(name: "/Page117", page: () => Page117())],
+      initialRoute: RouteConfig.SPLASH,
+      // getPages: RouteConfig.getPages,
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Getx计数器"),
@@ -27,26 +34,33 @@ class CountGetPage extends StatelessWidget {
             ),
             Divider(),
             ListTile(
-              title: Text("${'hello'.tr}"),
+              title: Text("国际化语言 ${'hello'.tr}"),
             ),
             Divider(),
             GetX<CounterGetLogic>(builder: (logic) {
-              return Text("GetX==${logic.count.toString()}");
+              return Text(
+                  "GetX 使用里面的控制器。与obx区别，obx可以使用外部的控制器==${logic.count.toString()}");
+            }),
+            // GetX 使用里面的控制器。与obx区别，obx可以使用外部的控制器
+            Divider(),
+
+            // GetBuilder被动方式，性能比getx高，getx，使用流的方式，需要监听对象
+
+            GetBuilder<CounterGetLogic>(
+                id: "a1",
+                builder: (logic) => Text(
+                    "GetBuilder被动方式，性能比getx高，getx，使用流的方式，需要监听对象=${logic.count.toString()}")),
+            GetBuilder<CounterGetLogic>(builder: (lo) {
+              return Text("GetBuild===${lo.count.value}");
             }),
             Divider(),
-            GetBuilder<CounterGetLogic>(
-                builder: (logic) =>
-                    Text("GetBuilder=${logic.count.toString()}")),
-            Divider(),
-
             GestureDetector(
               onTap: () {
-                Get.toNamed("/Page117");
+                Get.toNamed("/Page117", arguments: {"name": "tangchao"});
                 // Get.to(Page117(), arguments: {'user': 'tc'});
               },
-              child: Text("Get.toNamed"),
+              child: Text("Get.toNamed Get.arguments传参"),
             ),
-
             Divider(),
             GestureDetector(
               onTap: () {
@@ -62,6 +76,26 @@ class CountGetPage extends StatelessWidget {
               child: ListTile(
                 title: Text("改变语言"),
               ),
+            ),
+            Divider(
+              thickness: 2,
+            ),
+
+            ListTile(
+                leading: Text("练习GETX-GetViewDemo"),
+                onTap: () {
+                  Get.toNamed("/GetViewDemo");
+                }),
+            Divider(
+              thickness: 2,
+            ),
+            ListTile(
+              leading: Text("练习-GetWidget"),
+              onTap: () => {Get.toNamed("/GetWidgetDemo")},
+            ),
+            ListTile(
+              title: Text("Getx1128=中间件"),
+              onTap: () => Get.to(TestOnePage()),
             )
           ],
         ),
@@ -77,7 +111,8 @@ class CountGetPage extends StatelessWidget {
 }
 
 class AwesomeController extends GetxController {
-  var aa = RxString("Page117");
+  var aa = RxString("Page1117");
+  var mapController = RxMap(Get.arguments as Map);
 }
 
 class Page117 extends GetView<AwesomeController> {
@@ -85,9 +120,18 @@ class Page117 extends GetView<AwesomeController> {
 
   @override
   Widget build(BuildContext context) {
+    var map = Get.arguments as Map;
+
     return Scaffold(
       body: Center(
-        child: Text(controller.aa.value),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(controller.aa.value),
+            Text("Get.arguments==${map['name']}"),
+            Text("mapController==${controller.mapController.value['name']}"),
+          ],
+        ),
       ),
     );
   }

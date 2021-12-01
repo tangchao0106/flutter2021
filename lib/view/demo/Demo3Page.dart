@@ -28,7 +28,13 @@ class _Demo3PageState extends State<Demo3Page> {
       body: Center(
         child: Column(
           children: [
-            Text("data"),
+            GestureDetector(
+              child: Text(
+                "返回带参数=",
+                style: TextStyle(fontSize: 40),
+              ),
+              onTap: () => Navigator.pop(context, "我是参数"),
+            ),
             Text(
               "text $_count",
               style: Theme.of(context).textTheme.bodyText2,

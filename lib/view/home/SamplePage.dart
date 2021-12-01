@@ -83,6 +83,8 @@ class Demo2 extends StatelessWidget {
                             builder: (context) => Demo3Page(
                                   title: "Demo3Page",
                                 )));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("result=$result")));
                   },
                   child: Text("带有参数返回")),
               ElevatedButton(
@@ -234,17 +236,29 @@ class Demo2 extends StatelessWidget {
                     Navigator.pushNamed(context, "/Demo1112");
                   },
                   child: Text("1112")),
-              ElevatedButton(onPressed: (){
-                Navigator.pushNamed(context, "/CountGetPage");
-              }, child: Text("getx1115")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/CountGetPage");
+                  },
+                  child: Text("打开Getx大门")),
 
-              ElevatedButton(onPressed: (){
-                Navigator.pushNamed(context, "/PlatformChannel");
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/PlatformChannel");
+                  },
+                  child: Text("Channel跨平台")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/GetxPage");
+                  },
+                  child: Text("1123GetxPage")),
 
-              }, child: Text("PlatformChannel1118")),
-              ElevatedButton(onPressed: (){
-                Navigator.pushNamed(context, "/1123");
-              }, child: Text("1123"))
+              ListTile(
+                leading: Image.asset('assets/images/zq.png'),
+                hoverColor: Colors.amber,
+                title: Text("事件循环-futrue"),
+                onTap: () => Navigator.pushNamed(context, "/Feature11129"),
+              )
 
               // Scaffold.of(context)
               // ..removeCurrentSnackBar()

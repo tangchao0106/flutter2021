@@ -6,11 +6,16 @@ import 'package:untitled/view/demo/channel/channel1118.dart';
 import 'package:untitled/view/demo/get/CountGetPage.dart';
 import 'package:untitled/view/demo/loginPage.dart';
 
+import 'Demo1129Feature.dart';
+import 'get/getx/view.dart';
+
 Map<String, WidgetBuilder> routes = {
   "login": (context) => LoginPage(),
   "/searchPage": (context) => SearchPage(),
   "/custommultichildlayout": (context) => CustomMulti(),
   "/Demo1112": (context) => Demo1112(),
   "/CountGetPage": (context) => CountGetPage(),
-  "/PlatformChannel": (context) => PlatformChannel()
+  "/PlatformChannel": (context) => PlatformChannel(),
+  "/GetxPage": (context) => GetxPage(),
+  "/Feature11129": (context) => Feature11129(),
 };

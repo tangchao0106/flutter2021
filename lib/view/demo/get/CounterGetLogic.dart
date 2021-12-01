@@ -1,12 +1,19 @@
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import 'package:untitled/view/demo/get/User.dart';
-
+//使用controller优点 1 前后端分离，2 自动回收，不占用内存 3
 class CounterGetLogic extends GetxController {
   var count = 0.obs;
   var logger = Logger();
 
-  void increase() => ++count;
+  // void increase() {
+  //   count++;
+  // }
+  void increase() {
+    count++;
+    update(['a1']);
+  }
+
   final user = User().obs;
 
   void update1() {
