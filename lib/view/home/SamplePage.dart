@@ -258,6 +258,10 @@ class Demo2 extends StatelessWidget {
                 hoverColor: Colors.amber,
                 title: Text("事件循环-futrue"),
                 onTap: () => Navigator.pushNamed(context, "/Feature11129"),
+              ),
+              ListTile(
+                title: Text("Slidable控件"),
+                onTap: ()=>Navigator.pushNamed(context, "/Slidable"),
               )
 
               // Scaffold.of(context)

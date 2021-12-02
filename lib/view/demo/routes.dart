@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/main.dart';
 import 'package:untitled/view/demo/CustomMulti.dart';
 import 'package:untitled/view/demo/Demo1112.dart';
 import 'package:untitled/view/demo/SearchPage.dart';
@@ -7,6 +8,7 @@ import 'package:untitled/view/demo/get/CountGetPage.dart';
 import 'package:untitled/view/demo/loginPage.dart';
 
 import 'Demo1129Feature.dart';
+import 'flutter_slidable.dart';
 import 'get/getx/view.dart';
 
 Map<String, WidgetBuilder> routes = {
@@ -18,4 +20,5 @@ Map<String, WidgetBuilder> routes = {
   "/PlatformChannel": (context) => PlatformChannel(),
   "/GetxPage": (context) => GetxPage(),
   "/Feature11129": (context) => Feature11129(),
+  "/Slidable": (context) => MyAppSlidable(),
 };
