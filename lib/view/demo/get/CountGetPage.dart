@@ -16,13 +16,8 @@ class CountGetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final logic = Get.put(CounterGetLogic());
     bool ch = true;
-    return GetMaterialApp(
-      translations: Messages(),
-      locale: Locale('zh', 'CN'),
-      fallbackLocale: Locale('en', 'US'),
-      initialRoute: RouteConfig.SPLASH,
-      // getPages: RouteConfig.getPages,
-      home: Scaffold(
+    return Scaffold(
+      body: Scaffold(
         appBar: AppBar(
           title: const Text("Getx计数器"),
         ),
@@ -112,7 +107,7 @@ class CountGetPage extends StatelessWidget {
 
 class AwesomeController extends GetxController {
   var aa = RxString("Page1117");
-  var mapController = RxMap(Get.arguments as Map);
+  var mapController = RxMap();
 }
 
 class Page117 extends GetView<AwesomeController> {
