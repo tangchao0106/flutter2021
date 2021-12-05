@@ -17,7 +17,7 @@ class CounterGetLogic extends GetxController {
   final user = User().obs;
 
   void update1() {
-    user.update((user) {
+    user?.update((user) {
       user!.name = "tc";
       user!.age = 20;
     });

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:untitled/view/demo/get/splash_page.dart';
 import 'package:untitled/view/demo/get11128/TestOnePage.dart';
 import 'package:untitled/view/demo/get11128/get1128demo.dart';
 
@@ -8,13 +9,19 @@ import 'getx/view.dart';
 
 abstract class RouteConfig {
   static const SPLASH = "/";
+  static const Home = '/home';
   static const MAIN = "/main";
   static const String testOne = '';
   static const String testTwo = '';
   static const String chlid1 = '';
   static const String chlid2 = '';
   static const String login = '';
+
   static final List<GetPage> getPages = [
+  GetPage(
+      name: RouteConfig.SPLASH,
+      page: () => Splash(),
+    ),
     //需要登录，中间件
     GetPage(name: RouteConfig.login, page: () => TestOnePage(),
         //一个页面使用了中间件，则他所有的子路由也会自动用到父路由中声明的中间件
@@ -33,7 +40,6 @@ abstract class RouteConfig {
           return Get.lazyPut(() => TestOneLogic());
         })),
 
-    GetPage(name: RouteConfig.SPLASH, page: () => Page117()),
     GetPage(name: "/Page117", page: () => Page117()),
     GetPage(name: "/GetxPage", page: () => GetxPage()),
     GetPage(name: "/GetViewDemo", page: () => GetViewDemo()),

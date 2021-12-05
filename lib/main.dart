@@ -1,12 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled/view/demo/CustomMulti.dart';
 import 'package:untitled/view/demo/DrawerList.dart';
+import 'package:untitled/view/demo/Messages.dart';
 import 'package:untitled/view/demo/Provider1106.dart';
 import 'package:untitled/view/demo/SearchPage.dart';
 import 'package:untitled/view/demo/UnknowPage.dart';
+import 'package:untitled/view/demo/get/route_pages.dart';
+import 'package:untitled/view/demo/get/splash_page.dart';
 import 'package:untitled/view/demo/loginPage.dart';
 import 'package:untitled/view/demo/loginviewmodel.dart';
 import 'package:untitled/view/demo/registviewmodel.dart';
@@ -23,6 +27,23 @@ void main() => runApp(MultiProvider(
       ],
       child: Myapp(),
     ));
+// void main()=>runApp(MyAPP());
+//
+// class MyAPP extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return GetMaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       initialRoute: RouteConfig.SPLASH,
+//       getPages: RouteConfig.getPages,
+//       // translations: Messages(),
+//       // locale: Locale('zh', 'CN'),
+//       // fallbackLocale: Locale('en', 'US'),
+//     );
+//   }
+// }
+
 final GlobalKey<NavigatorState> navigatorkey = new GlobalKey();
 var logger = Logger();
 
@@ -75,7 +96,10 @@ class MyPageState extends StatefulWidget {
 
 class _MyPageState extends State<MyPageState> {
   var _currentindx = 0;
-  final pages = [Home(), Mine()];
+  final pages = [
+    Mine(),
+    Home(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -87,13 +111,13 @@ class _MyPageState extends State<MyPageState> {
         currentIndex: _currentindx,
         items: [
           BottomNavigationBarItem(
+              icon: Icon(Icons.category),
+              label: "分类",
+              backgroundColor: Colors.pink),
+          BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: "首页",
               backgroundColor: Colors.amber),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              label: "分类",
-              backgroundColor: Colors.deepPurple)
         ],
         type: BottomNavigationBarType.shifting,
         onTap: (int currentIndex) {

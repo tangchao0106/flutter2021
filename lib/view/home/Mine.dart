@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/ducafecat1205/main.dart';
+import 'package:untitled/view/demo/loginPage.dart';
 
 class Mine extends StatelessWidget {
   const Mine({Key? key}) : super(key: key);
@@ -7,9 +9,10 @@ class Mine extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("我的"),
+          title: Text("Widget"),
+          backgroundColor: Theme.of(context).primaryColor,
         ),
-        body: Body2());
+        body: Body());
   }
 }
 
@@ -28,62 +31,33 @@ class Body extends StatelessWidget {
           child: ListView(
             children: [
               ListTile(
-                leading: Icon(Icons.add),
-                title: Text("title"),
-                subtitle: Text("subtitle"),
+                leading: Icon(Icons.mail),
+                title: Text("仿新闻客户端1204"),
                 trailing: Icon(Icons.arrow_right),
                 selected: true,
                 selectedTileColor: Colors.yellow[100],
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>MyAppCat()));
+
+                },
               ),
               Divider(
-                thickness: 4,
+                thickness: 2,
               ),
               ListTile(
-                leading: Icon(Icons.add),
-                title: Text("title"),
-                subtitle: Text("subtitle"),
+                title: Text("玩安卓"),
+                leading: Image.asset("assets/images/weixin.png"),
                 trailing: Icon(Icons.arrow_right),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
               ),
               Divider(
-                thickness: 4,
-              ),
-              ListTile(
-                leading: Icon(Icons.add),
-                title: Text("title"),
-                subtitle: Text("subtitle"),
-                trailing: Icon(Icons.arrow_right),
-              ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.add),
-                title: Text("title"),
-                subtitle: Text("subtitle"),
-                trailing: Icon(Icons.arrow_right),
+                thickness: 2,
               ),
             ],
           )),
-    );
-  }
-}
-
-class Body2 extends StatelessWidget {
-  const Body2({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      child: ListView.separated(
-        itemBuilder: (BuildContext context, int index) {
-          return Text("AA$index");
-        },
-        itemCount: 10,
-        separatorBuilder: (BuildContext context, int index) {
-          return Divider(
-            color: Colors.amber,
-          );
-        },
-      ),
     );
   }
 }

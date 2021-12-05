@@ -73,6 +73,7 @@ class MyAppSlidable extends StatelessWidget {
               // component is not dragged.
               child: const ListTile(title: Text('Slide me')),
             ),
+            Divider(thickness: 10,),
             Slidable(
               // Specify a key if the Slidable is dismissible.
               key: const ValueKey(1),

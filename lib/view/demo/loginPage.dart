@@ -3,12 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:untitled/network/http_config.dart';
 import 'package:untitled/network/http_request.dart';
 import 'package:untitled/view/demo/SearchPage.dart';
 import 'package:share/share.dart';
 import 'package:logger/logger.dart';
 import 'bean/UserEntity.dart';
+import 'get/index_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -29,8 +31,8 @@ class _LoginPageState extends State<LoginPage>
             actions: <Widget>[
               new TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, "/searchPage",
-                      arguments: {"key": "value"});
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => IndexPage()));
                 },
                 child: new Text("确认"),
               ),
@@ -71,7 +73,7 @@ class _LoginPageState extends State<LoginPage>
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       theme: ThemeData(
           primaryColor: Theme.of(context).primaryColor,
           accentColor: Theme.of(context).accentColor,

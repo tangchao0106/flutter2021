@@ -15,6 +15,7 @@ import 'package:untitled/view/demo/Demo1102Sliver.dart';
 import 'package:untitled/view/demo/Demo3Page.dart';
 import 'package:untitled/view/demo/Demo4Page.dart';
 import 'package:untitled/view/demo/Demo1101about.dart';
+import 'package:untitled/view/demo/get/index_page.dart';
 import 'package:untitled/view/demo/loginPage.dart';
 
 class SamplePage extends StatelessWidget {
@@ -201,12 +202,6 @@ class Demo2 extends StatelessWidget {
               ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => AboutPage()));
-                  },
-                  child: Text("wanandroid")),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => Slivers()));
                   },
                   child: Text("Sliver")),
@@ -215,7 +210,7 @@ class Demo2 extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => LoginPage()));
                   },
-                  child: Text("1103")),
+                  child: Text("1103wanandroid")),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, "/p123");
@@ -233,12 +228,12 @@ class Demo2 extends StatelessWidget {
                   child: Text("1109Custommultichild")),
               ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, "/Demo1112");
+                    Navigator.pushNamed(context, "/CountGetPage");
                   },
                   child: Text("1112")),
               ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, "/CountGetPage");
+                    Navigator.pushNamed(context, "/Splash");
                   },
                   child: Text("打开Getx大门")),
 
@@ -252,17 +247,25 @@ class Demo2 extends StatelessWidget {
                     Navigator.pushNamed(context, "/GetxPage");
                   },
                   child: Text("1123GetxPage")),
+              Divider(),
 
               ListTile(
                 leading: Image.asset('assets/images/zq.png'),
                 hoverColor: Colors.amber,
-                title: Text("事件循环-futrue"),
+                title: Text("1202事件循环-futrue"),
                 onTap: () => Navigator.pushNamed(context, "/Feature11129"),
               ),
+              Divider(),
+
               ListTile(
                 title: Text("Slidable控件"),
-                onTap: ()=>Navigator.pushNamed(context, "/Slidable"),
-              )
+                onTap: () => Navigator.pushNamed(context, "/Slidable"),
+              ),
+              Divider(),
+              ListTile(
+                title: Text("1203三棵树(Widget、Element、RenderObject)"),
+                onTap: () => Navigator.pushNamed(context, "/Element"),
+              ),
 
               // Scaffold.of(context)
               // ..removeCurrentSnackBar()

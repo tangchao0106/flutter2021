@@ -1,0 +1,2 @@
+
+enum LoadState { LOADING, SUCCESS, FAILURE, DONE, NO_MORE, EMPTY }
