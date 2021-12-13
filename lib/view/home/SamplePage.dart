@@ -266,6 +266,11 @@ class Demo2 extends StatelessWidget {
                 title: Text("1203三棵树(Widget、Element、RenderObject)"),
                 onTap: () => Navigator.pushNamed(context, "/Element"),
               ),
+              Divider(),
+              ListTile(
+                title: Text("key的作用"),
+                onTap:()=>Navigator.pushNamed(context, "/FlutterKey")
+              )
 
               // Scaffold.of(context)
               // ..removeCurrentSnackBar()

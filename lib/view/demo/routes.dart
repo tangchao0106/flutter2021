@@ -8,6 +8,7 @@ import 'package:untitled/view/demo/get/CountGetPage.dart';
 import 'package:untitled/view/demo/loginPage.dart';
 
 import 'Demo1129Feature.dart';
+import 'Demo1211.dart';
 import 'flutter_slidable.dart';
 import 'get/getx/view.dart';
 import 'element_1203.dart';
@@ -27,4 +28,6 @@ Map<String, WidgetBuilder> routes = {
   "/Slidable": (context) => MyAppSlidable(),
   "/Element": (context) => Element1203(),
   "/Splash": (context) => Splash(),
+  "/FlutterKey": (context) => FlutterKey(),
+
 };
