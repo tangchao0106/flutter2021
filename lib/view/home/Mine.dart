@@ -27,18 +27,22 @@ class Body extends StatelessWidget {
       reverse: true,
       physics: BouncingScrollPhysics(),
       child: Container(
+          decoration: BoxDecoration(),
           height: 200,
           child: ListView(
             children: [
               ListTile(
-                leading: Icon(Icons.mail),
+                leading: Image.asset(
+                  "assets/images/spide_logo.png",
+                  height: 40,
+                ),
                 title: Text("仿新闻客户端1204"),
                 trailing: Icon(Icons.arrow_right),
                 selected: true,
                 selectedTileColor: Colors.yellow[100],
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>MyAppCat()));
-
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyAppCat()));
                 },
               ),
               Divider(
@@ -46,7 +50,7 @@ class Body extends StatelessWidget {
               ),
               ListTile(
                 title: Text("玩安卓"),
-                leading: Image.asset("assets/images/weixin.png"),
+                leading: Image.asset("assets/images/weixin.png", height: 40),
                 trailing: Icon(Icons.arrow_right),
                 onTap: () {
                   Navigator.push(context,

@@ -46,7 +46,7 @@ class SignInPage extends GetView<SignInController> {
                     height: 76.h,
                     decoration: BoxDecoration(
                         color: AppColors.primaryBackground,
-                        boxShadow: [Shadows.primaryShadow],
+                        // boxShadow: [Shadows.primaryShadow],
                         borderRadius:
                             BorderRadius.all(Radius.circular((76 * 0.5).w))),
                     child: Container(),
@@ -56,9 +56,9 @@ class SignInPage extends GetView<SignInController> {
                   right: 0,
                 ),
                 Positioned(
-                    top: 13.w,
+                    // top: 13.w,
                     child: Image.asset(
-                      "assets/images/logo.png",
+                      "assets/images/spide_logo.png",
                       fit: BoxFit.none,
                     )),
               ],
@@ -75,7 +75,7 @@ class SignInPage extends GetView<SignInController> {
             ),
           ),
           Text(
-            "tang",
+            "tangchao",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 16.sp, height: 1),
           )
@@ -111,7 +111,7 @@ class SignInPage extends GetView<SignInController> {
                 Spacer(),
                 btnFlatButtonWidget(
                     gbColor: AppColors.thirdElement,
-                    onPressed: controller.handleNavSignUp,
+                    onPressed: controller.handleSignIn,
                     title: "登录"),
               ],
             ),
@@ -159,7 +159,7 @@ class SignInPage extends GetView<SignInController> {
       child: btnFlatButtonWidget(
           onPressed: controller.handleNavSignUp,
           width: 294,
-          title: "SING UP",
+          title: "一键登录",
           fontSize: 16),
     );
   }

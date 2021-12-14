@@ -19,8 +19,8 @@ abstract class BaseGetxController extends GetxController{
           if(isloading){
             loadState.value=LoadState.FAILURE;
           }
-          if(error.code){}
-    })
+          // if(error?.code){}
+    });
 
 
 
