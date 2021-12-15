@@ -114,7 +114,8 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: creatbottomNavigationBar(),
-      body: WillPopScope(//WillPopScope用于处理是否离开当前页面
+      body: WillPopScope(
+          //WillPopScope用于处理是否离开当前页面
           child: PageView(
             physics: NeverScrollableScrollPhysics(),
             children: widget._pages,

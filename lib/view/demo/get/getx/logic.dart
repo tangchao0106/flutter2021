@@ -26,4 +26,5 @@ class GetxLogic extends GetxController with StateMixin<Person> {
 //   }
 // }
 
-getid(String userId) {}
+getid(String userId) {
+}
