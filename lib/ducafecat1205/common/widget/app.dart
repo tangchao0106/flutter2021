@@ -16,6 +16,7 @@ AppBar transparentAppBar({
             child: title,
           )
         : null,
+    centerTitle: true,
     leading: leading,
     actions: actions,
   );

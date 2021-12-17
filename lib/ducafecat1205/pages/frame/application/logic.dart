@@ -44,7 +44,7 @@ class ApplicationPageController extends GetxController {
           Icons.home,
           color: AppColors.secondaryElementText,
         ),
-        label: 'main1',
+        label: 'main',
         backgroundColor: Colors.pink,
       ),
       // BottomNavigationBarItem(

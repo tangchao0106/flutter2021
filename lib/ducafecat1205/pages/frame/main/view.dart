@@ -16,10 +16,11 @@ class MainPage extends GetView<MainController>{
         children: [
           NewsCategoriesWidget(),
           Divider(),
-          NewsChannelsWidget(),
-          Divider(),
           NewsRecommendWidget(),
           Divider(),
+          NewsChannelsWidget(),
+          Divider(),
+
         ],
 
       ),
