@@ -18,6 +18,17 @@ class MainController extends GetxController {
   asyncLoadAllData() async {
     logger.d("message");
     state.categories = await NewsAPI.categories(cacheDisk: true);
+
+    state.channels = await NewsAPI.channels(cacheDisk: true);
+    logger.d(" state.channels转换后=${state.channels}");
+
+    state.newsRecommend = await NewsAPI.newsRecommend(
+      cacheDisk: true,
+    );
+    state.newsPageList = await NewsAPI.newPageList(
+      cacheDisk: true,
+    );
+
   }
 
   asyncLoadNewsData(
@@ -25,6 +36,7 @@ class MainController extends GetxController {
     bool refresh = false,
   }) async {
     state.selCategoryCode = categorycode;
+
     state.newsRecommend = await NewsAPI.newsRecommend(
       parmas: NewsRecommendRequestEntity(categoryCode: categorycode),
       refresh: refresh,
