@@ -33,7 +33,7 @@ class ApplicationPageController extends GetxController {
   void onInit() {
     super.onInit();
 
-    tabTitles = ['Welcome', 'Cagegory', 'Bookmarks', 'Account'];
+    tabTitles = ['Welcome', '玩安卓', 'Bookmarks', 'Account'];
     bottomTabs = <BottomNavigationBarItem>[
       new BottomNavigationBarItem(
         icon: Icon(
@@ -60,7 +60,7 @@ class ApplicationPageController extends GetxController {
           Icons.person,
           color: AppColors.secondaryElementText,
         ),
-        label: 'category',
+        label: '玩安卓',
         backgroundColor: AppColors.primaryBackground,
       ),
       new BottomNavigationBarItem(

@@ -16,7 +16,7 @@ class NewsRecommendWidget extends GetView<MainController> {
     return Obx(() => controller.state.newsRecommend == null
         ? Container()
         : Container(
-            margin: EdgeInsets.all(20.w),
+            margin: EdgeInsets.symmetric(vertical: 10.h,horizontal: 20.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -25,7 +25,7 @@ class NewsRecommendWidget extends GetView<MainController> {
                   child: netImageCached(
                       controller.state.newsRecommend.thumbnail,
                       width: 335.w,
-                      height: 290.h),
+                      height: 200.h),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 14.h),
