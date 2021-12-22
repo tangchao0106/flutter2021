@@ -270,6 +270,10 @@ class Demo2 extends StatelessWidget {
               ListTile(
                 title: Text("key的作用"),
                 onTap:()=>Navigator.pushNamed(context, "/FlutterKey")
+              ),
+              ListTile(
+                  title: Text("测试Spacer底部一行3列"),
+                  onTap:()=>Navigator.pushNamed(context, "/Demo1222")
               )
 
               // Scaffold.of(context)

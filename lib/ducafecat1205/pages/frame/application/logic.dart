@@ -47,10 +47,6 @@ class ApplicationPageController extends GetxController {
         label: 'main',
         backgroundColor: Colors.pink,
       ),
-      // BottomNavigationBarItem(
-      //     label: "我的", icon: Icon(Icons.person), backgroundColor: Colors.pink),
-      // BottomNavigationBarItem(
-      //     label: "我的", icon: Icon(Icons.person), backgroundColor: Colors.pink),
       new BottomNavigationBarItem(
         icon: Icon(
           Icons.person,
