@@ -33,6 +33,7 @@ class NewsListWidget extends GetView<MainController> {
   Widget _buildListItem(NewsItem item) {
     // print("item.thumbnai==${item.thumbnail??""}");
     return Container(
+      height: 100.h,
       margin: EdgeInsets.all(10.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -78,7 +79,7 @@ class NewsListWidget extends GetView<MainController> {
                   maxLines: 3,
                 )),
               ),
-              // Spacer(),
+              Spacer(),
               Container(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,

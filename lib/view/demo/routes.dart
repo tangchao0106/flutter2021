@@ -10,6 +10,7 @@ import 'package:untitled/view/demo/loginPage.dart';
 import 'Demo1129Feature.dart';
 import 'Demo1211.dart';
 import 'demo1222.dart';
+import 'demo1223.dart';
 import 'flutter_slidable.dart';
 import 'get/getx/view.dart';
 import 'element_1203.dart';
@@ -31,5 +32,6 @@ Map<String, WidgetBuilder> routes = {
   "/Splash": (context) => Splash(),
   "/FlutterKey": (context) => FlutterKey(),
   "/Demo1222": (context) => Demo1222(),
+  "/Demo1223": (context) => Demo1223(),
 
 };

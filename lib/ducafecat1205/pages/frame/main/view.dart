@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:untitled/ducafecat1205/pages/frame/main/widget/categories.dart';
 import 'package:untitled/ducafecat1205/pages/frame/main/widget/channels.dart';
+import 'package:untitled/ducafecat1205/pages/frame/main/widget/newletter.dart';
 import 'package:untitled/ducafecat1205/pages/frame/main/widget/news_list.dart';
 import 'package:untitled/ducafecat1205/pages/frame/main/widget/recommend.dart';
 
@@ -22,6 +23,8 @@ class MainPage extends GetView<MainController> {
           NewsChannelsWidget(),
           Divider(),
           NewsListWidget(),
+          Divider(),
+          NewsletterWidget()
         ],
       ),
     );

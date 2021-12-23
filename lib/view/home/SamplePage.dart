@@ -274,8 +274,11 @@ class Demo2 extends StatelessWidget {
               ListTile(
                   title: Text("测试Spacer底部一行3列"),
                   onTap:()=>Navigator.pushNamed(context, "/Demo1222")
-              )
-
+              ),
+              ListTile(
+                  title: Text("测试1223"),
+                  onTap:()=>Navigator.pushNamed(context, "/Demo1223")
+              ),
               // Scaffold.of(context)
               // ..removeCurrentSnackBar()
               // ..showSnackBar(SnackBar(content: Text("$result")));
