@@ -20,6 +20,7 @@ class NewsListWidget extends GetView<MainController> {
                 _buildListItem(item),
                 Divider(
                   height: 1,
+                  color: Colors.amber,
                 ),
               ];
 
