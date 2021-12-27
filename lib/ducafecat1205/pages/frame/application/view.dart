@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:untitled/ducafecat1205/common/values/colors.dart';
 import 'package:untitled/ducafecat1205/common/widget/app.dart';
+import 'package:untitled/ducafecat1205/pages/frame/category/view.dart';
 import 'package:untitled/ducafecat1205/pages/frame/main/view.dart';
 
 import 'logic.dart';
@@ -41,7 +42,7 @@ class ApplicationPage extends GetView<ApplicationPageController> {
       children: [
         MainPage(),
         Text('CategoryPage'),
-        Text('BookmarksPage'),
+        CategoryPage(),
         Text('AccountPage'),
       ],
       controller: controller.pageController,

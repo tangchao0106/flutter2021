@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:untitled/ducafecat1205/common/values/colors.dart';
 import 'package:untitled/ducafecat1205/main.dart';
 import 'package:untitled/view/demo/loginPage.dart';
 
@@ -45,9 +48,7 @@ class Body extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => MyAppCat()));
                 },
               ),
-              Divider(
-                thickness: 2,
-              ),
+              Divider(),
               ListTile(
                 title: Text("玩安卓"),
                 leading: Image.asset("assets/images/weixin.png", height: 40),
@@ -57,8 +58,15 @@ class Body extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => LoginPage()));
                 },
               ),
-              Divider(
-                thickness: 2,
+              Divider(),
+              ListTile(
+                title: Text("人脸识别"),
+                leading: Image.asset("assets/images/weixin.png", height: 40),
+                trailing: Icon(Icons.arrow_right),
+                onTap: () {
+                  Get.snackbar("标题", "人脸识别",
+                      backgroundColor: AppColors.tabBarElement);
+                },
               ),
             ],
           )),

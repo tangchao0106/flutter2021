@@ -64,7 +64,8 @@ dependencies:
   shared_preferences: ^2.0.8
   # 日期
   intl: ^0.17.0
-
+  # 下拉刷新
+  pull_to_refresh: ^2.0.0
 #  #动态权限申请
 #  permission_handler: ^8.3.0
 dev_dependencies:

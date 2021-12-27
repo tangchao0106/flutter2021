@@ -72,7 +72,8 @@ class NewsletterWidget extends GetView<MainController> {
                       fontWeight: FontWeight.w400),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      Get.snackbar("", "	指定手势交互可以监听点击事件");
+                      Get.snackbar("", "	指定手势交互可以监听点击事件",
+                          backgroundColor: Colors.amber[100]);
                     }),
             ])),
           ),
