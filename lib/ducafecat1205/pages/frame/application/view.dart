@@ -5,6 +5,7 @@ import 'package:untitled/ducafecat1205/common/values/colors.dart';
 import 'package:untitled/ducafecat1205/common/widget/app.dart';
 import 'package:untitled/ducafecat1205/pages/frame/category/view.dart';
 import 'package:untitled/ducafecat1205/pages/frame/main/view.dart';
+import 'package:untitled/ducafecat1205/pages/wanandroid/home/wanandroid_home.dart';
 
 import 'logic.dart';
 
@@ -41,7 +42,7 @@ class ApplicationPage extends GetView<ApplicationPageController> {
       physics: NeverScrollableScrollPhysics(),
       children: [
         MainPage(),
-        Text('CategoryPage'),
+        WandroidHomePage(),
         CategoryPage(),
         Text('AccountPage'),
       ],
