@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:untitled/ducafecat1205/common/api/gzh.dart';
 
-class WandroidHomePage extends StatefulWidget {
-  const WandroidHomePage({Key? key}) : super(key: key);
+import 'controller.dart';
 
-  @override
-  State<WandroidHomePage> createState() => _WandroidHomePageState();
-}
-
-class _WandroidHomePageState extends State<WandroidHomePage> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    GongZhongHao.Futurechapters();
-  }
-
+class WandroidHomePage extends GetView<wandroidgzhController> {
   @override
   Widget build(BuildContext context) {
+    print("WandroidHomePage==");
     return Container(
-      child: Text("玩安卓"),
+      child: Obx(() =>
+      controller.state.gzhCategories == null
+          ? Container()
+          : SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: controller.state.gzhCategories.map((item) {
+            return Container(
+              child: Text(item.name),
+            );
+          }).toList(),
+        ),
+      )),
     );
   }
 }

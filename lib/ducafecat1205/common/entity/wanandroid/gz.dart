@@ -1,15 +1,15 @@
 /// id : "413"
 /// name : "Android群英传"
 
-class Gongzhonghao {
+class Gz {
   Gz({
-    String? id,
-    String? name,}){
+      String? id, 
+      String? name,}){
     _id = id;
     _name = name;
-  }
+}
 
-  Gongzhonghao.fromJson(dynamic json) {
+  Gz.fromJson(dynamic json) {
     _id = json['id'];
     _name = json['name'];
   }
