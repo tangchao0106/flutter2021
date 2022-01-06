@@ -14,8 +14,5 @@ class wandroidgzhController extends GetxController {
 
   loadData() async {
     state.gzhCategories = await GongZhongHaoApi.Futurechapters();
-
-    GongZhongHaoApi.logger.d("loadDataloadDataloadDataloadDataloadData");
-    GongZhongHaoApi.logger.d(state.gzhCategories.size);
   }
 }
