@@ -33,7 +33,7 @@ class ApplicationPageController extends GetxController {
   void onInit() {
     super.onInit();
 
-    tabTitles = ['Welcome', '玩安卓', 'Bookmarks', 'Account'];
+    tabTitles = ['Welcome', '玩安卓公众号', 'Bookmarks', 'Account'];
     bottomTabs = <BottomNavigationBarItem>[
       new BottomNavigationBarItem(
         icon: Icon(

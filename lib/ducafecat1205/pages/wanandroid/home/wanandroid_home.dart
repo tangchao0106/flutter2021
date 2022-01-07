@@ -3,13 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:untitled/ducafecat1205/common/api/gzh.dart';
 import 'package:untitled/ducafecat1205/common/entity/wanandroid/gonghonghao2.dart';
+import 'package:untitled/ducafecat1205/common/values/colors.dart';
 
 import 'controller.dart';
 
 class WandroidHomePage extends GetView<wandroidgzhController> {
   @override
   Widget build(BuildContext context) {
-    print("WandroidHomePage==");
     return Container(
       child: Obx(() => controller.state.gzhCategories == null
           ? Container()
@@ -23,12 +23,27 @@ class WandroidHomePage extends GetView<wandroidgzhController> {
                     padding: EdgeInsets.symmetric(horizontal: 4),
                     height: 52.h,
                     alignment: Alignment.center,
-                    child: InkWell(child: Text(item.name,style: TextStyle(
-                      fontSize: 18.sp
-
-                    ),),onTap: ()=>{
-                      Get.snackbar("title", "message==${item.name}")
-                    },),
+                    child: InkWell(
+                      child: LayoutBuilder(
+                        builder:
+                            (BuildContext context, BoxConstraints constraints) {
+                          print("111message==${controller.state.gzhid == item.id.toString()} ");
+                          return Text(
+                            item.name,
+                            style: TextStyle(
+                                fontSize: 18.sp,
+                                color: controller.state.gzhid == item.id.toString()
+                                    ? AppColors.secondaryElementText
+                                    : AppColors.primaryText),
+                          );
+                        },
+                      ),
+                      onTap: () => {
+                        controller.loadDataByID(item.id),
+                        Get.snackbar(
+                            "title", "1message==${controller.state.gzhid}"),
+                      },
+                    ),
                   );
                 }).toList(),
               ),

@@ -16,8 +16,7 @@ class GongZhongHaoApi {
   }) async {
     var response = await HttpUtil2().get("/wxarticle/chapters/json",
         refresh: refresh, cacheDisk: cacheDisk);
-    // logger.d("公众号= jsonDecode  ${jsonDecode(response)}");
-    // logger.d("公众号=jsonEncode   ${jsonEncode(response)}");
+    logger.d("公众号=jsonEncode   ${jsonEncode(response)}");
     var data = response['data'];
     var bb= data.map<Gongzhonghao2>((item) => Gongzhonghao2.fromJson(item));
     logger.d("公众号=bb   ${bb.runtimeType}");

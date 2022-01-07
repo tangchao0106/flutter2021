@@ -30,6 +30,7 @@ class NewsCategoriesWidget extends GetView<MainController> {
                           fontWeight: FontWeight.w600),
                     ),
                     onTap: () => {
+
                       controller.asyncLoadNewsData(item.code)
                     },
                   ),
