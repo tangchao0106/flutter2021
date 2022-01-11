@@ -19,5 +19,6 @@ class wandroidgzhController extends GetxController {
   loadDataByID(categorycode, {bool refrsh = false}) async {
     state.gzhid = categorycode.toString();
     print("state.gzhid   ${state.gzhid}  categorycode==$categorycode");
+    await GongZhongHaoApi.getDataByid(categorycode.toString());
   }
 }
